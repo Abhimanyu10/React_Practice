@@ -25,8 +25,11 @@ export default class Counter extends Component {
     render() {
         return ( 
             <div>
-                <div>Count : {this.state.count}</div>      
-                <button onClick = {this.incr} >Increment</button>
+                <div><label>Count : {this.state.count}</label></div>     
+                <p>
+                    This is a counter component .<br/>
+                </p>
+                <button onClick = {this.incr}>Increment</button>
                 <button onClick = {this.decr}>Decrement</button>
             </div>
         )
