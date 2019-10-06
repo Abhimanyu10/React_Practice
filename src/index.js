@@ -9,8 +9,9 @@ class Index extends React.Component{
 
     render(){
         let e = <div>
-                    <h1>React Practice</h1>
-                    <Form/>
+                    <h1>React Practice<hr id = 'h1-br'/></h1>
+                    
+                    <Form />
                 </div>
         return e
     }

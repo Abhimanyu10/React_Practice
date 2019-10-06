@@ -6,9 +6,11 @@ export class Form extends Component {
     state = { 
         id   : '',
         pass : '',
-        loggedIn : false
+        loggedIn: false,
     }
-
+    
+   
+    
     handleLogout = ()=>{
         this.setState({
             loggedIn : false
@@ -24,35 +26,33 @@ export class Form extends Component {
             console.log('Welcome')
         }
     };
-
-    handleUsername = (event)=>{
-        console.log(event.target.value);
+    
+    handleData = (event, fieldName) => {
+        console.log(fieldName);
         this.setState({
-            id : event.target.value
-        });
-    }
-
-    handlePassword = (event)=>{
-        console.log(event.target.value);
-        this.setState({
-            pass : event.target.value
-        });
+            [fieldName] : event.target.value
+            // Equivalent to id : event.target.value or pass : event.target.value depending upon the fieldname
+        })
     }
 
     render() {
+        let text = "Enter 'Abhimanyu' in Username and 'Password' in Password field to continue."
         
         let e = <div></div>
         if(!this.state.loggedIn){        
             e = (<div>
-                    <input type = 'text' placeholder = 'Username' onBlur = {this.handleUsername}></input>
-                    <input type = 'text' placeholder = 'Password' onBlur = {this.handlePassword}></input>
-                    <button onClick = {this.handleLogin}>Login</button> 
+                <h3>{text}</h3>
+                <input type='text' placeholder='Username' onBlur = {(e)=>this.handleData(e,'id')}></input>
+                <input type='password' placeholder='Password' onBlur = {(e)=>this.handleData(e,'pass')}></input>
+                <button onClick = {this.handleLogin}>Login</button> 
                 </div>);
         }
         else{
             e = (<div>
-                    <App/>
-                    <button onClick = {this.handleLogout}>Logout</button> 
+                <App />
+                <div id = 'app-div-id'>
+                    <button onClick = {this.handleLogout} id>Logout</button> 
+                </div>
                 </div>)
         }
         return e;

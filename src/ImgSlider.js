@@ -14,7 +14,7 @@ class ImgSlider extends React.Component{
 
     // ele =
 
-    increment = ()=>{
+    next = ()=>{
         this.setState({
             idx : (this.state.idx + 1) % this.state.sz
         });
@@ -22,17 +22,20 @@ class ImgSlider extends React.Component{
 
     render(){
         return  (
-            <div>
-                Image Slider
+            <div id = 'img-slider-outer-div'>
+                <label>Image Slider</label>
+                <p>
+                    This is an image slider component which is used to display images.<br />
+                    Click the image to go to next image.
+                </p>
                 <div>
-                    <img alt = 'click to change'src = {this.state.images[this.state.idx] } onClick = {this.increment}/>
+                    <img src = {this.state.images[this.state.idx] } onClick = {this.next}/>
                 </div>
-                {/* <button onClick = {this.increment}>-></button> */}
             </div>
         );
     }
     
 }
-
+// ReactDOM.render(<ImgSlider/>,document.getElementById('test'));
 
 export default ImgSlider;
