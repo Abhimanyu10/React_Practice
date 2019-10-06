@@ -17,10 +17,12 @@ export class Form extends Component {
     }
 
     handleLogin = ()=>{
-        this.setState({
-            loggedIn : true
-        });
-        console.log('Welcome')
+        if(this.state.id === 'Abhimanyu' && this.state.pass === 'Password'){
+            this.setState({
+                loggedIn : true
+            });
+            console.log('Welcome')
+        }
     };
 
     handleUsername = (event)=>{
@@ -40,17 +42,19 @@ export class Form extends Component {
     render() {
         
         let e = <div></div>
-        if(!this.state.loggedIn)        
+        if(!this.state.loggedIn){        
             e = (<div>
                     <input type = 'text' placeholder = 'Username' onBlur = {this.handleUsername}></input>
                     <input type = 'text' placeholder = 'Password' onBlur = {this.handlePassword}></input>
                     <button onClick = {this.handleLogin}>Login</button> 
                 </div>);
-        else
+        }
+        else{
             e = (<div>
                     <App/>
                     <button onClick = {this.handleLogout}>Logout</button> 
                 </div>)
+        }
         return e;
     };
 }

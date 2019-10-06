@@ -57,7 +57,8 @@ input{
   border: none;
   margin: 10px;
   padding : 5px 5px 5px 5px;
-  border-radius: 10px
+  border-radius: 10px;
+  border : 1px solid rgb(120, 108, 108);
 }
 
 input:hover{
