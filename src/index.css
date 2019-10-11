@@ -50,6 +50,11 @@ img {
     border: none;
 }
 
+#asda{
+    height:60px;
+    width:60px;
+}
+
 input {
     background-color: rgb(231, 231, 224);
     border: none;

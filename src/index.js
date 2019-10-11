@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
+import FU from './FetchRandomUser'
 
 //conditional rendering of components::
 import Form from './Form'
@@ -16,6 +17,6 @@ class Index extends React.Component{
         return e
     }
 }
-
-ReactDOM.render(<Index/>,document.getElementById('root'));
+// ReactDOM.render(<Index/>,document.getElementById('root'));
+ReactDOM.render(<FU />, document.getElementById('test'));
 serviceWorker.unregister();
